@@ -1,0 +1,435 @@
+/* Blood Donation Management System - Custom Styles */
+
+/* General Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.main-content {
+    min-height: calc(100vh - 200px);
+}
+
+/* Custom Colors */
+:root {
+    --blood-red: #dc3545;
+    --blood-red-dark: #c82333;
+    --blood-red-light: #f5c6cb;
+}
+
+/* Header Styling */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #fff !important;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: #fff !important;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fff !important;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:active {
+    color: #fff !important;
+}
+
+/* Dropdown menu styling */
+.navbar-nav .dropdown-menu {
+    background-color: rgba(220, 53, 69, 0.95);
+    border: none;
+    border-radius: 8px;
+}
+
+.navbar-nav .dropdown-item {
+    color: #fff !important;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--blood-red) 0%, var(--blood-red-dark) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Hero Image Styling */
+.hero-image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.hero-image {
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+    transition: all 0.3s ease;
+}
+
+.hero-image:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive hero image */
+@media (max-width: 768px) {
+    .hero-image {
+        max-width: 250px !important;
+    }
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    border-radius: 12px 12px 0 0 !important;
+    border-bottom: none;
+    font-weight: 600;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-danger {
+    background-color: var(--blood-red);
+    border-color: var(--blood-red);
+}
+
+.btn-danger:hover {
+    background-color: var(--blood-red-dark);
+    border-color: var(--blood-red-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+.btn-outline-danger {
+    color: var(--blood-red);
+    border-color: var(--blood-red);
+}
+
+.btn-outline-danger:hover {
+    background-color: var(--blood-red);
+    border-color: var(--blood-red);
+    transform: translateY(-1px);
+}
+
+/* Badges */
+.badge {
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+}
+
+/* Blood Type Badges */
+.badge.bg-danger {
+    background-color: var(--blood-red) !important;
+}
+
+/* Forms */
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--blood-red);
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.form-label {
+    font-weight: 600;
+    color: #495057;
+}
+
+/* Alert Messages */
+.alert {
+    border-radius: 8px;
+    border: none;
+    font-weight: 500;
+}
+
+.alert-danger {
+    background-color: var(--blood-red-light);
+    color: var(--blood-red-dark);
+}
+
+/* Statistics Cards */
+.card.bg-primary,
+.card.bg-success,
+.card.bg-warning,
+.card.bg-info,
+.card.bg-danger,
+.card.bg-dark {
+    color: white;
+}
+
+.card.bg-primary:hover,
+.card.bg-success:hover,
+.card.bg-warning:hover,
+.card.bg-info:hover,
+.card.bg-danger:hover,
+.card.bg-dark:hover {
+    transform: scale(1.05);
+}
+
+/* Tables */
+.table {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table thead th {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    font-weight: 600;
+    color: #495057;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(220, 53, 69, 0.05);
+}
+
+/* Step Icons */
+.step-icon {
+    transition: transform 0.3s ease;
+}
+
+.step-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    background-color: #343a40 !important;
+}
+
+footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--blood-red) !important;
+}
+
+/* Blood Drop Animation */
+@keyframes bloodDrop {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+}
+
+.blood-drop {
+    animation: bloodDrop 2s infinite;
+}
+
+/* Custom List Group */
+.list-group-item.active {
+    background-color: var(--blood-red);
+    border-color: var(--blood-red);
+}
+
+.list-group-item:hover {
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+/* Progress Bars */
+.progress {
+    border-radius: 10px;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    border-radius: 10px;
+}
+
+/* Modal */
+.modal-content {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    border-bottom: 1px solid #e9ecef;
+    border-radius: 12px 12px 0 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem !important;
+    }
+    
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+    
+    .card {
+        margin-bottom: 1rem;
+    }
+    
+    .table-responsive {
+        font-size: 0.875rem;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Blood Type Compatibility Chart */
+.compatibility-chart {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.compatibility-chart table {
+    min-width: 600px;
+}
+
+/* Urgency Indicators */
+.urgency-emergency {
+    border-left: 4px solid #dc3545;
+}
+
+.urgency-high {
+    border-left: 4px solid #ffc107;
+}
+
+.urgency-medium {
+    border-left: 4px solid #17a2b8;
+}
+
+.urgency-low {
+    border-left: 4px solid #28a745;
+}
+
+/* Donor Status Indicators */
+.donor-available {
+    position: relative;
+}
+
+.donor-available::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 12px;
+    height: 12px;
+    background-color: #28a745;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--blood-red);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--blood-red-dark);
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .btn,
+    footer {
+        display: none !important;
+    }
+    
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #dee2e6 !important;
+    }
+    
+    body {
+        background-color: white !important;
+    }
+}

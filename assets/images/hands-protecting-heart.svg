@@ -1,0 +1,151 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="handsGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0891b2;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0e7490;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#155e75;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="heartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f472b6;stop-opacity:0.9" />
+      <stop offset="50%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#be185d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="glowGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#67e8f9;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:0.1" />
+    </linearGradient>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0e7490" flood-opacity="0.2"/>
+    </filter>
+    <filter id="heartGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Left Hand -->
+  <g transform="translate(200,200)" filter="url(#softShadow)">
+    <!-- Left Palm -->
+    <path d="M -80 20 Q -100 0 -110 25 Q -115 50 -105 75 Q -90 95 -70 90 Q -50 85 -35 75 Q -25 65 -30 50 Q -35 35 -45 25 Q -55 15 -65 20 Q -75 25 -80 20 Z" 
+          fill="url(#handsGradient)" stroke="#164e63" stroke-width="2"/>
+    
+    <!-- Left Fingers -->
+    <ellipse cx="-85" cy="5" rx="8" ry="20" fill="#06b6d4" stroke="#164e63" stroke-width="1" transform="rotate(-15)"/>
+    <ellipse cx="-95" cy="15" rx="7" ry="18" fill="#0891b2" stroke="#164e63" stroke-width="1" transform="rotate(-10)"/>
+    <ellipse cx="-100" cy="30" rx="6" ry="16" fill="#0e7490" stroke="#164e63" stroke-width="1" transform="rotate(-5)"/>
+    <ellipse cx="-98" cy="45" rx="5" ry="14" fill="#155e75" stroke="#164e63" stroke-width="1"/>
+    
+    <!-- Left Thumb -->
+    <ellipse cx="-65" cy="35" rx="8" ry="15" fill="#06b6d4" stroke="#164e63" stroke-width="1" transform="rotate(45)"/>
+  </g>
+  
+  <!-- Right Hand -->
+  <g transform="translate(200,200)" filter="url(#softShadow)">
+    <!-- Right Palm -->
+    <path d="M 80 20 Q 100 0 110 25 Q 115 50 105 75 Q 90 95 70 90 Q 50 85 35 75 Q 25 65 30 50 Q 35 35 45 25 Q 55 15 65 20 Q 75 25 80 20 Z" 
+          fill="url(#handsGradient)" stroke="#164e63" stroke-width="2"/>
+    
+    <!-- Right Fingers -->
+    <ellipse cx="85" cy="5" rx="8" ry="20" fill="#06b6d4" stroke="#164e63" stroke-width="1" transform="rotate(15)"/>
+    <ellipse cx="95" cy="15" rx="7" ry="18" fill="#0891b2" stroke="#164e63" stroke-width="1" transform="rotate(10)"/>
+    <ellipse cx="100" cy="30" rx="6" ry="16" fill="#0e7490" stroke="#164e63" stroke-width="1" transform="rotate(5)"/>
+    <ellipse cx="98" cy="45" rx="5" ry="14" fill="#155e75" stroke="#164e63" stroke-width="1"/>
+    
+    <!-- Right Thumb -->
+    <ellipse cx="65" cy="35" rx="8" ry="15" fill="#06b6d4" stroke="#164e63" stroke-width="1" transform="rotate(-45)"/>
+  </g>
+  
+  <!-- Protected Heart in Center -->
+  <g transform="translate(200,200)" filter="url(#heartGlow)">
+    <path d="M -25 -10 Q -40 -25 -55 -10 Q -55 5 -40 20 L 0 60 L 40 20 Q 55 5 55 -10 Q 40 -25 25 -10 Q 0 10 -25 -10 Z" 
+          fill="url(#heartGradient)" stroke="#be185d" stroke-width="2"/>
+    
+    <!-- Heart Highlights -->
+    <ellipse cx="-15" cy="5" rx="8" ry="12" fill="#fbbf24" opacity="0.4"/>
+    <ellipse cx="15" cy="5" rx="6" ry="10" fill="#fbbf24" opacity="0.3"/>
+    
+    <!-- Heart Pulse Line -->
+    <path d="M -20 15 L -10 15 L -5 5 L 0 25 L 5 10 L 10 15 L 20 15" 
+          stroke="#ffffff" stroke-width="2" fill="none" opacity="0.8"/>
+  </g>
+  
+  <!-- Caring Aura/Energy -->
+  <g opacity="0.3">
+    <circle cx="200" cy="200" r="120" fill="none" stroke="#67e8f9" stroke-width="1">
+      <animate attributeName="r" values="120;140;120" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.1;0.3" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="200" r="100" fill="none" stroke="#a5f3fc" stroke-width="1">
+      <animate attributeName="r" values="100;120;100" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.1;0.4" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Floating Care Elements -->
+  <g opacity="0.4">
+    <!-- Small hearts floating around -->
+    <g transform="translate(120, 120)">
+      <path d="M 0 0 Q -3 -4 -6 -2 Q -6 1 -3 4 L 0 8 L 3 4 Q 6 1 6 -2 Q 3 -4 0 0 Z" 
+            fill="#f472b6" opacity="0.6">
+        <animateTransform attributeName="transform" attributeType="XML" 
+                          type="translate" values="120,120; 125,115; 120,120" dur="3s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <g transform="translate(280, 280)">
+      <path d="M 0 0 Q -2 -3 -4 -1 Q -4 1 -2 3 L 0 6 L 2 3 Q 4 1 4 -1 Q 2 -3 0 0 Z" 
+            fill="#ec4899" opacity="0.5">
+        <animateTransform attributeName="transform" attributeType="XML" 
+                          type="translate" values="280,280; 275,285; 280,280" dur="2.5s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <g transform="translate(100, 280)">
+      <path d="M 0 0 Q -2 -3 -4 -1 Q -4 1 -2 3 L 0 6 L 2 3 Q 4 1 4 -1 Q 2 -3 0 0 Z" 
+            fill="#0891b2" opacity="0.4">
+        <animateTransform attributeName="transform" attributeType="XML" 
+                          type="translate" values="100,280; 105,275; 100,280" dur="3.5s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <g transform="translate(300, 120)">
+      <path d="M 0 0 Q -3 -4 -6 -2 Q -6 1 -3 4 L 0 8 L 3 4 Q 6 1 6 -2 Q 3 -4 0 0 Z" 
+            fill="#06b6d4" opacity="0.6">
+        <animateTransform attributeName="transform" attributeType="XML" 
+                          type="translate" values="300,120; 295,125; 300,120" dur="2s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <!-- Care symbols -->
+    <g transform="translate(80, 200)">
+      <circle cx="0" cy="0" r="3" fill="#67e8f9" opacity="0.5">
+        <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <g transform="translate(320, 200)">
+      <circle cx="0" cy="0" r="2" fill="#a5f3fc" opacity="0.6">
+        <animate attributeName="r" values="2;4;2" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Inspirational Message -->
+  <defs>
+    <path id="careText" d="M 60 350 Q 200 330 340 350"/>
+  </defs>
+  <text font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#0e7490" opacity="0.7">
+    <textPath href="#careText" startOffset="50%" text-anchor="middle">
+      Care • Compassion • Community
+    </textPath>
+  </text>
+  
+  <!-- Subtle Medical Plus -->
+  <g transform="translate(200, 80)" opacity="0.2">
+    <rect x="-8" y="-2" width="16" height="4" rx="2" fill="#0891b2"/>
+    <rect x="-2" y="-8" width="4" height="16" rx="2" fill="#0891b2"/>
+  </g>
+</svg>

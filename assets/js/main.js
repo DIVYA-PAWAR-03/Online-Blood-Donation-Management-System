@@ -14,6 +14,64 @@ document.addEventListener('DOMContentLoaded', function() {
         return new bootstrap.Popover(popoverTriggerEl);
     });
 
+    // Counter Animation
+    function animateCounters() {
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200; // Animation speed
+
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            const count = parseInt(counter.innerText);
+            const increment = target / speed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(() => animateCounters(), 1);
+            } else {
+                counter.innerText = target.toLocaleString();
+            }
+        });
+    }
+
+    // Intersection Observer for counter animation
+    const counterSection = document.querySelector('.stats-card');
+    if (counterSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(counterSection.parentElement);
+    }
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
     // Auto-hide alerts after 5 seconds
     setTimeout(function() {
         var alerts = document.querySelectorAll('.alert:not(.alert-permanent)');

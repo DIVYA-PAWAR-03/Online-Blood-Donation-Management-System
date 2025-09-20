@@ -1,0 +1,131 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bloodBagGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0891b2;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#0e7490;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="tubeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="heartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" />
+    </linearGradient>
+    <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="200" cy="200" r="180" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Blood Bag -->
+  <g transform="translate(200,200)" filter="url(#dropShadow)">
+    <!-- Main Blood Bag -->
+    <rect x="-40" y="-60" width="80" height="100" rx="8" ry="8" 
+          fill="url(#bloodBagGradient)" stroke="#155e75" stroke-width="2"/>
+    
+    <!-- Blood Bag Top -->
+    <rect x="-35" y="-70" width="70" height="15" rx="3" ry="3" 
+          fill="#374151" stroke="#1f2937" stroke-width="1"/>
+    
+    <!-- Blood Bag Label -->
+    <rect x="-30" y="-45" width="60" height="20" rx="2" ry="2" 
+          fill="#ffffff" opacity="0.9"/>
+    <text x="0" y="-35" text-anchor="middle" font-family="Arial, sans-serif" 
+          font-size="8" fill="#1f2937" font-weight="bold">BLOOD</text>
+    <text x="0" y="-27" text-anchor="middle" font-family="Arial, sans-serif" 
+          font-size="6" fill="#1f2937">Type O+</text>
+    
+    <!-- Blood level indicator -->
+    <rect x="-35" y="-15" width="70" height="3" rx="1" ry="1" 
+          fill="#0891b2" opacity="0.8"/>
+    
+    <!-- Tube connection -->
+    <circle cx="0" cy="-70" r="3" fill="#374151"/>
+    
+    <!-- Medical Cross -->
+    <g transform="translate(-60, -40)">
+      <rect x="-6" y="-2" width="12" height="4" fill="#ffffff"/>
+      <rect x="-2" y="-6" width="4" height="12" fill="#ffffff"/>
+    </g>
+  </g>
+  
+  <!-- IV Tube -->
+  <g transform="translate(200,130)">
+    <path d="M 0 0 Q 20 10 30 30 Q 40 50 35 80 Q 30 110 50 140" 
+          stroke="url(#tubeGradient)" stroke-width="4" fill="none"/>
+    
+    <!-- Tube connector -->
+    <circle cx="0" cy="0" r="4" fill="#374151"/>
+    
+    <!-- Drop at end -->
+    <g transform="translate(50, 140)">
+      <path d="M 0 0 Q -3 -5 -4 -8 Q -4 -12 -2 -15 Q 0 -18 2 -15 Q 4 -12 4 -8 Q 3 -5 0 0 Z" 
+            fill="#0891b2" opacity="0.8"/>
+    </g>
+  </g>
+  
+  <!-- Heart with pulse -->
+  <g transform="translate(120, 280)">
+    <path d="M 0 0 Q -8 -12 -16 -8 Q -20 -4 -16 4 L 0 20 L 16 4 Q 20 -4 16 -8 Q 8 -12 0 0 Z" 
+          fill="url(#heartGradient)" filter="url(#dropShadow)"/>
+    
+    <!-- Pulse line -->
+    <g transform="translate(25, -10)">
+      <path d="M 0 10 L 5 10 L 8 0 L 12 20 L 16 5 L 20 10 L 30 10" 
+            stroke="#0891b2" stroke-width="2" fill="none" opacity="0.8"/>
+    </g>
+  </g>
+  
+  <!-- Helping Hand -->
+  <g transform="translate(280, 120)">
+    <ellipse cx="0" cy="0" rx="25" ry="35" fill="#fbbf24" stroke="#d97706" stroke-width="2" 
+             transform="rotate(15)" filter="url(#dropShadow)"/>
+    
+    <!-- Fingers -->
+    <ellipse cx="-8" cy="-25" rx="4" ry="12" fill="#d97706" transform="rotate(10)"/>
+    <ellipse cx="0" cy="-30" rx="4" ry="14" fill="#d97706"/>
+    <ellipse cx="8" cy="-28" rx="4" ry="13" fill="#d97706" transform="rotate(-10)"/>
+    <ellipse cx="15" cy="-22" rx="3" ry="10" fill="#d97706" transform="rotate(-20)"/>
+    
+    <!-- Thumb -->
+    <ellipse cx="-15" cy="-5" rx="5" ry="8" fill="#d97706" transform="rotate(45)"/>
+  </g>
+  
+  <!-- Floating elements -->
+  <g opacity="0.6">
+    <!-- Small hearts -->
+    <g transform="translate(80, 100)">
+      <path d="M 0 0 Q -3 -5 -6 -3 Q -8 -1 -6 2 L 0 8 L 6 2 Q 8 -1 6 -3 Q 3 -5 0 0 Z" 
+            fill="#06b6d4" opacity="0.7"/>
+    </g>
+    
+    <g transform="translate(320, 280)">
+      <path d="M 0 0 Q -2 -3 -4 -2 Q -5 0 -4 1 L 0 5 L 4 1 Q 5 0 4 -2 Q 2 -3 0 0 Z" 
+            fill="#06b6d4" opacity="0.5"/>
+    </g>
+    
+    <!-- Medical plus signs -->
+    <g transform="translate(70, 300)">
+      <rect x="-4" y="-1" width="8" height="2" fill="#10b981"/>
+      <rect x="-1" y="-4" width="2" height="8" fill="#10b981"/>
+    </g>
+    
+    <g transform="translate(330, 150)">
+      <rect x="-3" y="-1" width="6" height="2" fill="#10b981" opacity="0.7"/>
+      <rect x="-1" y="-3" width="2" height="6" fill="#10b981" opacity="0.7"/>
+    </g>
+  </g>
+  
+  <!-- Inspirational text curve -->
+  <defs>
+    <path id="textcurve" d="M 50 350 Q 200 320 350 350"/>
+  </defs>
+  <text font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#7f1d1d" opacity="0.7">
+    <textPath href="#textcurve" startOffset="50%" text-anchor="middle">
+      Every Drop Counts • Save Lives
+    </textPath>
+  </text>
+</svg>

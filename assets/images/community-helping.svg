@@ -1,0 +1,236 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="communityGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0891b2;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0e7490;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#155e75;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="heartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f472b6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+    </linearGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#164e63" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background Unity Circle -->
+  <circle cx="200" cy="200" r="180" fill="none" stroke="#cffafe" stroke-width="2" opacity="0.3">
+    <animate attributeName="r" values="180;190;180" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.1;0.3" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Central Community Hub -->
+  <circle cx="200" cy="200" r="25" fill="url(#heartGradient)" filter="url(#softGlow)">
+    <animate attributeName="r" values="25;30;25" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Central Heart Symbol -->
+  <g transform="translate(200,200)" filter="url(#dropShadow)">
+    <path d="M -8 -3 Q -12 -8 -16 -3 Q -16 2 -12 6 L 0 18 L 12 6 Q 16 2 16 -3 Q 12 -8 8 -3 Q 0 4 -8 -3 Z" 
+          fill="#ffffff" opacity="0.9"/>
+  </g>
+
+  <!-- Person 1: Left - Donor reaching out -->
+  <g transform="translate(120,180)" filter="url(#dropShadow)">
+    <!-- Head -->
+    <circle cx="0" cy="-15" r="12" fill="url(#communityGradient)"/>
+    
+    <!-- Body -->
+    <ellipse cx="0" cy="10" rx="15" ry="25" fill="url(#communityGradient)"/>
+    
+    <!-- Arms - reaching out to help -->
+    <ellipse cx="18" cy="5" rx="8" ry="20" fill="url(#accentGradient)" transform="rotate(30)"/>
+    <ellipse cx="-15" cy="8" rx="6" ry="18" fill="url(#accentGradient)" transform="rotate(-20)"/>
+    
+    <!-- Legs -->
+    <ellipse cx="-6" cy="35" rx="6" ry="18" fill="url(#communityGradient)" transform="rotate(-10)"/>
+    <ellipse cx="6" cy="35" rx="6" ry="18" fill="url(#communityGradient)" transform="rotate(10)"/>
+    
+    <!-- Helping hand gesture -->
+    <circle cx="25" cy="0" r="4" fill="url(#accentGradient)" opacity="0.8">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Person 2: Right - Recipient -->
+  <g transform="translate(280,220)" filter="url(#dropShadow)">
+    <!-- Head -->
+    <circle cx="0" cy="-15" r="12" fill="url(#communityGradient)"/>
+    
+    <!-- Body -->
+    <ellipse cx="0" cy="10" rx="15" ry="25" fill="url(#communityGradient)"/>
+    
+    <!-- Arms - receiving help -->
+    <ellipse cx="-18" cy="5" rx="8" ry="20" fill="url(#accentGradient)" transform="rotate(-30)"/>
+    <ellipse cx="15" cy="8" rx="6" ry="18" fill="url(#accentGradient)" transform="rotate(20)"/>
+    
+    <!-- Legs -->
+    <ellipse cx="-6" cy="35" rx="6" ry="18" fill="url(#communityGradient)" transform="rotate(-10)"/>
+    <ellipse cx="6" cy="35" rx="6" ry="18" fill="url(#communityGradient)" transform="rotate(10)"/>
+  </g>
+
+  <!-- Person 3: Top - Community supporter -->
+  <g transform="translate(200,120)" filter="url(#dropShadow)">
+    <!-- Head -->
+    <circle cx="0" cy="-15" r="12" fill="url(#communityGradient)"/>
+    
+    <!-- Body -->
+    <ellipse cx="0" cy="10" rx="15" ry="25" fill="url(#communityGradient)"/>
+    
+    <!-- Arms - welcoming gesture -->
+    <ellipse cx="-18" cy="5" rx="8" ry="20" fill="url(#accentGradient)" transform="rotate(-45)"/>
+    <ellipse cx="18" cy="5" rx="8" ry="20" fill="url(#accentGradient)" transform="rotate(45)"/>
+    
+    <!-- Legs -->
+    <ellipse cx="-6" cy="35" rx="6" ry="18" fill="url(#communityGradient)" transform="rotate(-5)"/>
+    <ellipse cx="6" cy="35" rx="6" ry="18" fill="url(#communityGradient)" transform="rotate(5)"/>
+  </g>
+
+  <!-- Person 4: Bottom Left - Volunteer -->
+  <g transform="translate(130,280)" filter="url(#dropShadow)">
+    <!-- Head -->
+    <circle cx="0" cy="-15" r="11" fill="url(#communityGradient)"/>
+    
+    <!-- Body -->
+    <ellipse cx="0" cy="10" rx="14" ry="23" fill="url(#communityGradient)"/>
+    
+    <!-- Arms - active helping -->
+    <ellipse cx="16" cy="2" rx="7" ry="18" fill="url(#accentGradient)" transform="rotate(20)"/>
+    <ellipse cx="-14" cy="6" rx="6" ry="16" fill="url(#accentGradient)" transform="rotate(-15)"/>
+    
+    <!-- Legs -->
+    <ellipse cx="-5" cy="32" rx="5" ry="16" fill="url(#communityGradient)" transform="rotate(-8)"/>
+    <ellipse cx="5" cy="32" rx="5" ry="16" fill="url(#communityGradient)" transform="rotate(8)"/>
+  </g>
+
+  <!-- Person 5: Bottom Right - Healthcare worker -->
+  <g transform="translate(270,280)" filter="url(#dropShadow)">
+    <!-- Head -->
+    <circle cx="0" cy="-15" r="11" fill="url(#communityGradient)"/>
+    
+    <!-- Body -->
+    <ellipse cx="0" cy="10" rx="14" ry="23" fill="url(#communityGradient)"/>
+    
+    <!-- Arms - professional care -->
+    <ellipse cx="-16" cy="2" rx="7" ry="18" fill="url(#accentGradient)" transform="rotate(-20)"/>
+    <ellipse cx="14" cy="6" rx="6" ry="16" fill="url(#accentGradient)" transform="rotate(15)"/>
+    
+    <!-- Legs -->
+    <ellipse cx="-5" cy="32" rx="5" ry="16" fill="url(#communityGradient)" transform="rotate(-8)"/>
+    <ellipse cx="5" cy="32" rx="5" ry="16" fill="url(#communityGradient)" transform="rotate(8)"/>
+    
+    <!-- Medical cross on chest -->
+    <g transform="translate(0,5)">
+      <rect x="-3" y="-1" width="6" height="2" fill="#ffffff" opacity="0.8"/>
+      <rect x="-1" y="-3" width="2" height="6" fill="#ffffff" opacity="0.8"/>
+    </g>
+  </g>
+
+  <!-- Connection Lines showing unity -->
+  <g stroke="url(#accentGradient)" stroke-width="2" fill="none" opacity="0.4">
+    <!-- From center to each person -->
+    <line x1="200" y1="200" x2="120" y2="180">
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="3s" repeatCount="indefinite"/>
+    </line>
+    <line x1="200" y1="200" x2="280" y2="220">
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="3.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="200" y1="200" x2="200" y2="120">
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="2.8s" repeatCount="indefinite"/>
+    </line>
+    <line x1="200" y1="200" x2="130" y2="280">
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="3.2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="200" y1="200" x2="270" y2="280">
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="2.5s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Floating Help Symbols -->
+  <g opacity="0.6">
+    <!-- Plus signs representing medical help -->
+    <g transform="translate(80,150)">
+      <rect x="-4" y="-1" width="8" height="2" fill="#06b6d4"/>
+      <rect x="-1" y="-4" width="2" height="8" fill="#06b6d4"/>
+      <animateTransform attributeName="transform" type="translate" 
+                        values="80,150; 85,145; 80,150" dur="3s" repeatCount="indefinite"/>
+    </g>
+    
+    <g transform="translate(320,160)">
+      <rect x="-3" y="-1" width="6" height="2" fill="#0891b2"/>
+      <rect x="-1" y="-3" width="2" height="6" fill="#0891b2"/>
+      <animateTransform attributeName="transform" type="translate" 
+                        values="320,160; 315,165; 320,160" dur="2.5s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Small hearts representing care -->
+    <g transform="translate(100,300)">
+      <path d="M 0 0 Q -2 -3 -4 -1 Q -4 1 -2 3 L 0 6 L 2 3 Q 4 1 4 -1 Q 2 -3 0 0 Z" 
+            fill="#f472b6" opacity="0.7">
+        <animateTransform attributeName="transform" type="translate" 
+                          values="100,300; 105,295; 100,300" dur="4s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <g transform="translate(300,300)">
+      <path d="M 0 0 Q -2 -3 -4 -1 Q -4 1 -2 3 L 0 6 L 2 3 Q 4 1 4 -1 Q 2 -3 0 0 Z" 
+            fill="#ec4899" opacity="0.6">
+        <animateTransform attributeName="transform" type="translate" 
+                          values="300,300; 295,305; 300,300" dur="3.5s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- Helping hand symbols -->
+    <g transform="translate(60,220)">
+      <circle cx="0" cy="0" r="3" fill="#67e8f9" opacity="0.7">
+        <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <g transform="translate(340,240)">
+      <circle cx="0" cy="0" r="2" fill="#a5f3fc" opacity="0.8">
+        <animate attributeName="r" values="2;4;2" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+
+  <!-- Unity Waves -->
+  <g fill="none" stroke="#cffafe" stroke-width="1" opacity="0.3">
+    <circle cx="200" cy="200" r="120">
+      <animate attributeName="r" values="120;130;120" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="200" r="140">
+      <animate attributeName="r" values="140;150;140" dur="6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Inspirational Message -->
+  <defs>
+    <path id="unityText" d="M 60 350 Q 200 330 340 350"/>
+  </defs>
+  <text font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#0e7490" opacity="0.8">
+    <textPath href="#unityText" startOffset="50%" text-anchor="middle">
+      Together • Unity • Community
+    </textPath>
+  </text>
+
+  <!-- Small blood drop as symbol of purpose -->
+  <g transform="translate(200,60)" opacity="0.4">
+    <path d="M 0 0 Q -4 -8 -8 -4 Q -8 0 -4 4 Q 0 8 4 4 Q 8 0 8 -4 Q 4 -8 0 0 Z" 
+          fill="#f472b6">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>

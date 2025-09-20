@@ -21,22 +21,25 @@ include 'includes/header.php';
 
 <!-- Hero Section -->
 <section class="hero-section bg-danger text-white py-5">
+    <div class="floating-particles"></div>
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6">
                 <h1 class="display-4 fw-bold mb-4">Save Lives, Donate Blood</h1>
                 <p class="lead mb-4">Join our community of life-savers. Every drop counts in making a difference in someone's life.</p>
-                <div class="d-flex gap-3">
-                    <a href="register.php" class="btn btn-light btn-lg">
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="register.php" class="btn btn-light btn-lg modern-btn">
                         <i class="fas fa-heart me-2"></i>Become a Donor
                     </a>
-                    <a href="request_blood.php" class="btn btn-outline-light btn-lg">
+                    <a href="request_blood.php" class="btn btn-outline-light btn-lg modern-btn-outline">
                         <i class="fas fa-hand-holding-heart me-2"></i>Request Blood
                     </a>
                 </div>
             </div>
             <div class="col-md-6 text-center">
-                <i class="fas fa-tint" style="font-size: 15rem; opacity: 0.3;"></i>
+                <div class="hero-image-container">
+                    <img src="assets/images/community-helping.svg" alt="Community People Helping Each Other - Unity and Social Responsibility" class="img-fluid hero-image" style="max-width: 380px; height: auto;">
+                </div>
             </div>
         </div>
     </div>
@@ -46,30 +49,51 @@ include 'includes/header.php';
 <section class="py-5 bg-light">
     <div class="container">
         <div class="row text-center">
+            <div class="col-12 mb-5">
+                <h2 class="section-title">Our Impact in Numbers</h2>
+                <p class="text-muted lead">Together, we're making a difference in lives</p>
+            </div>
+        </div>
+        <div class="row text-center">
             <div class="col-md-4 mb-4">
-                <div class="card border-0 shadow-sm h-100">
+                <div class="card border-0 shadow-sm h-100 stats-card">
                     <div class="card-body">
-                        <i class="fas fa-users text-danger mb-3" style="font-size: 3rem;"></i>
-                        <h3 class="text-danger"><?php echo number_format($donor_stats['total_donors']); ?></h3>
-                        <p class="text-muted">Registered Donors</p>
+                        <div class="stat-icon mb-3">
+                            <i class="fas fa-users text-danger" style="font-size: 3.5rem;"></i>
+                        </div>
+                        <h3 class="text-danger counter" data-target="<?php echo $donor_stats['total_donors']; ?>">0</h3>
+                        <p class="text-muted font-weight-bold">Registered Donors</p>
+                        <div class="progress mt-3" style="height: 6px;">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card border-0 shadow-sm h-100">
+                <div class="card border-0 shadow-sm h-100 stats-card">
                     <div class="card-body">
-                        <i class="fas fa-hand-holding-heart text-danger mb-3" style="font-size: 3rem;"></i>
-                        <h3 class="text-danger"><?php echo number_format($request_stats['total_requests']); ?></h3>
-                        <p class="text-muted">Active Requests</p>
+                        <div class="stat-icon mb-3">
+                            <i class="fas fa-hand-holding-heart text-danger" style="font-size: 3.5rem;"></i>
+                        </div>
+                        <h3 class="text-danger counter" data-target="<?php echo $request_stats['total_requests']; ?>">0</h3>
+                        <p class="text-muted font-weight-bold">Active Requests</p>
+                        <div class="progress mt-3" style="height: 6px;">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card border-0 shadow-sm h-100">
+                <div class="card border-0 shadow-sm h-100 stats-card">
                     <div class="card-body">
-                        <i class="fas fa-tint text-danger mb-3" style="font-size: 3rem;"></i>
-                        <h3 class="text-danger"><?php echo number_format($donation_stats['completed_donations']); ?></h3>
-                        <p class="text-muted">Lives Saved</p>
+                        <div class="stat-icon mb-3">
+                            <i class="fas fa-heartbeat text-danger" style="font-size: 3.5rem;"></i>
+                        </div>
+                        <h3 class="text-danger counter" data-target="<?php echo $donation_stats['completed_donations']; ?>">0</h3>
+                        <p class="text-muted font-weight-bold">Lives Saved</p>
+                        <div class="progress mt-3" style="height: 6px;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -2,16 +2,7 @@
 require_once 'includes/config.php';
 
 // Get recent blood requests
-$db->query(                    <div class="card-body">
-                        <div class="stat-icon mb-3">
-                            <i class="fas fa-heartbeat" style="font-size: 3.5rem; color: #0891b2;"></i>
-                        </div>
-                        <h3 class="counter" style="color: #0891b2;" data-target="<?php echo $donation_stats['completed_donations']; ?>">0</h3>
-                        <p class="text-muted font-weight-bold">Lives Saved</p>
-                        <div class="progress mt-3" style="height: 6px;">
-                            <div class="progress-bar" style="background-color: #0891b2; width: 92%" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>FROM blood_requests WHERE status = 'Active' ORDER BY urgency DESC, created_at DESC LIMIT 6");
+$db->query("SELECT * FROM blood_requests WHERE status = 'Active' ORDER BY urgency DESC, created_at DESC LIMIT 6");
 $recent_requests = $db->resultset();
 
 // Get donor statistics

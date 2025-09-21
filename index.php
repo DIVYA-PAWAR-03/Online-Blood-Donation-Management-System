@@ -2,7 +2,16 @@
 require_once 'includes/config.php';
 
 // Get recent blood requests
-$db->query("SELECT * FROM blood_requests WHERE status = 'Active' ORDER BY urgency DESC, created_at DESC LIMIT 6");
+$db->query(                    <div class="card-body">
+                        <div class="stat-icon mb-3">
+                            <i class="fas fa-heartbeat" style="font-size: 3.5rem; color: #0891b2;"></i>
+                        </div>
+                        <h3 class="counter" style="color: #0891b2;" data-target="<?php echo $donation_stats['completed_donations']; ?>">0</h3>
+                        <p class="text-muted font-weight-bold">Lives Saved</p>
+                        <div class="progress mt-3" style="height: 6px;">
+                            <div class="progress-bar" style="background-color: #0891b2; width: 92%" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>FROM blood_requests WHERE status = 'Active' ORDER BY urgency DESC, created_at DESC LIMIT 6");
 $recent_requests = $db->resultset();
 
 // Get donor statistics
@@ -20,7 +29,7 @@ include 'includes/header.php';
 ?>
 
 <!-- Hero Section -->
-<section class="hero-section bg-danger text-white py-5">
+<section class="hero-section py-5">
     <div class="floating-particles"></div>
     <div class="container">
         <div class="row align-items-center">
@@ -59,12 +68,12 @@ include 'includes/header.php';
                 <div class="card border-0 shadow-sm h-100 stats-card">
                     <div class="card-body">
                         <div class="stat-icon mb-3">
-                            <i class="fas fa-users text-danger" style="font-size: 3.5rem;"></i>
+                            <i class="fas fa-users" style="font-size: 3.5rem; color: #0891b2;"></i>
                         </div>
-                        <h3 class="text-danger counter" data-target="<?php echo $donor_stats['total_donors']; ?>">0</h3>
+                        <h3 class="counter" style="color: #0891b2;" data-target="<?php echo $donor_stats['total_donors']; ?>">0</h3>
                         <p class="text-muted font-weight-bold">Registered Donors</p>
                         <div class="progress mt-3" style="height: 6px;">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar" style="background-color: #0891b2; width: 85%" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                 </div>
@@ -73,12 +82,12 @@ include 'includes/header.php';
                 <div class="card border-0 shadow-sm h-100 stats-card">
                     <div class="card-body">
                         <div class="stat-icon mb-3">
-                            <i class="fas fa-hand-holding-heart text-danger" style="font-size: 3.5rem;"></i>
+                            <i class="fas fa-hand-holding-heart" style="font-size: 3.5rem; color: #0891b2;"></i>
                         </div>
-                        <h3 class="text-danger counter" data-target="<?php echo $request_stats['total_requests']; ?>">0</h3>
+                        <h3 class="counter" style="color: #0891b2;" data-target="<?php echo $request_stats['total_requests']; ?>">0</h3>
                         <p class="text-muted font-weight-bold">Active Requests</p>
                         <div class="progress mt-3" style="height: 6px;">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar" style="background-color: #0891b2; width: 65%" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                 </div>
@@ -107,7 +116,7 @@ include 'includes/header.php';
         <div class="row">
             <div class="col-12">
                 <h2 class="text-center mb-5">
-                    <i class="fas fa-exclamation-triangle text-danger me-2"></i>
+                    <i class="fas fa-exclamation-triangle me-2" style="color: #0891b2;"></i>
                     Urgent Blood Requests
                 </h2>
             </div>
@@ -153,7 +162,7 @@ include 'includes/header.php';
             </div>
             
             <div class="text-center mt-4">
-                <a href="request_blood.php" class="btn btn-danger btn-lg">
+                <a href="request_blood.php" class="btn btn-lg" style="background-color: #0891b2; color: white; border: 1px solid #0891b2;">
                     <i class="fas fa-plus me-2"></i>Post Blood Request
                 </a>
             </div>
@@ -167,28 +176,28 @@ include 'includes/header.php';
         <h2 class="text-center mb-5">How It Works</h2>
         <div class="row">
             <div class="col-md-3 text-center mb-4">
-                <div class="step-icon bg-danger text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                <div class="step-icon rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background-color: white; color: #0891b2; border: 2px solid #0891b2;">
                     <i class="fas fa-user-plus fa-2x"></i>
                 </div>
                 <h5>1. Register</h5>
                 <p class="text-muted">Sign up as a blood donor with your details and get verified by our admin team.</p>
             </div>
             <div class="col-md-3 text-center mb-4">
-                <div class="step-icon bg-danger text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                <div class="step-icon rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background-color: white; color: #0891b2; border: 2px solid #0891b2;">
                     <i class="fas fa-search fa-2x"></i>
                 </div>
                 <h5>2. Find Matches</h5>
                 <p class="text-muted">Search for blood requests in your area that match your blood type.</p>
             </div>
             <div class="col-md-3 text-center mb-4">
-                <div class="step-icon bg-danger text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                <div class="step-icon rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background-color: white; color: #0891b2; border: 2px solid #0891b2;">
                     <i class="fas fa-phone fa-2x"></i>
                 </div>
                 <h5>3. Connect</h5>
                 <p class="text-muted">Contact the requester directly to coordinate donation details.</p>
             </div>
             <div class="col-md-3 text-center mb-4">
-                <div class="step-icon bg-danger text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                <div class="step-icon rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background-color: white; color: #0891b2; border: 2px solid #0891b2;">
                     <i class="fas fa-heart fa-2x"></i>
                 </div>
                 <h5>4. Save Lives</h5>
@@ -206,7 +215,7 @@ include 'includes/header.php';
             <div class="col-md-10">
                 <div class="table-responsive">
                     <table class="table table-bordered text-center">
-                        <thead class="bg-danger text-white">
+                        <thead style="background-color: white; color: #0891b2; border-bottom: 2px solid #0891b2;">
                             <tr>
                                 <th>Blood Type</th>
                                 <th>Can Donate To</th>

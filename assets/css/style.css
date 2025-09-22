@@ -1593,6 +1593,24 @@ footer a:hover {
     color: #dc2626 !important;
 }
 
+/* Logo Icons - Blood Drop and Medical Icons */
+.navbar-brand .fas,
+.navbar-brand .far,
+.navbar-brand i,
+.footer-logo .fas,
+.footer-logo .far,
+.footer-logo i {
+    color: #dc2626 !important;
+}
+
+/* Medical/Blood Icons Specific */
+.fas.fa-tint,
+.fas.fa-heartbeat,
+.fas.fa-heart,
+.fas.fa-plus-circle {
+    color: #dc2626 !important;
+}
+
 .navbar .nav-link,
 .navbar .navbar-nav .nav-link {
     color: #dc2626 !important;
@@ -1691,6 +1709,19 @@ a:hover {
     border-color: #991b1b !important;
     transform: translateY(-2px) !important;
     box-shadow: 0 6px 12px rgba(220, 38, 38, 0.4) !important;
+}
+
+/* Override btn-light when used with modern-btn */
+.btn-light.modern-btn {
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%) !important;
+    color: white !important;
+    border: 1px solid #dc2626 !important;
+}
+
+.btn-light.modern-btn:hover {
+    background: linear-gradient(135deg, #991b1b 0%, #7f1d1d 100%) !important;
+    color: white !important;
+    border-color: #991b1b !important;
 }
 
 /* Form Elements */
@@ -1853,4 +1884,31 @@ a:hover {
 .cta-section h2,
 .cta-section h3 {
     color: white !important;
+}
+
+/* Force Red Color for All Logo and Medical Icons */
+.fas.fa-tint,
+.fas.fa-heartbeat,
+.fas.fa-heart,
+.fas.fa-user-plus,
+.fas.fa-hand-holding-heart,
+.fas.fa-search,
+.fas.fa-phone,
+.fas.fa-envelope,
+.fas.fa-map-marker-alt,
+.fas.fa-clock,
+.fas.fa-users,
+.fas.fa-hospital,
+.fas.fa-ambulance,
+.fas.fa-plus-circle {
+    color: #dc2626 !important;
+}
+
+/* Override Bootstrap's danger color with our red */
+.bg-danger {
+    background-color: #dc2626 !important;
+}
+
+.border-danger {
+    border-color: #dc2626 !important;
 }
